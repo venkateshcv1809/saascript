@@ -1,0 +1,38 @@
+{
+  "name": "saascript",
+  "version": "0.0.5",
+  "description": "Node boilerplate for SaaS applications using TypeScript and Docker",
+  "main": "index.js",
+  "scripts": {
+    "test": "test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/venkateshcv1809/saascript.git"
+  },
+  "keywords": [
+    "SaaS",
+    "Node",
+    "TypeScript",
+    "Docker"
+  ],
+  "author": "VENKATESH C.V",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/venkateshcv1809/saascript/issues"
+  },
+  "homepage": "https://github.com/venkateshcv1809/saascript#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.3",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.1"
+  }
+}
