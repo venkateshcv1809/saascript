@@ -2,18 +2,16 @@
     "name": "saascript",
     "version": "0.0.5",
     "description": "Node boilerplate for SaaS applications using TypeScript and Docker",
-    "main": "index.js",
+    "main": "dist/server.js",
     "scripts": {
         "start": "npm run serve",
         "build": "npm run build-ts && npm run tslint",
         "serve": "node dist/server.js",
-        "watch-node": "nodemon dist/server.js",
         "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
         "build-ts": "tsc",
         "watch-ts": "tsc -w",
         "tslint": "tslint -c tslint.json -p tsconfig.json",
         "debug": "npm run build && npm run watch-debug",
-        "serve-debug": "nodemon --inspect dist/server.js",
         "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-debug\""
     },
     "repository": {
@@ -35,7 +33,6 @@
     "dependencies": {
         "body-parser": "^1.18.3",
         "compression": "^1.7.3",
-        "dotenv": "^6.1.0",
         "express": "^4.16.3",
         "lodash": "^4.17.11"
     },
@@ -43,7 +40,6 @@
         "@types/compression": "0.0.36",
         "@types/express": "^4.16.0",
         "eslint": "^5.9.0",
-        "nodemon": "^1.18.4",
         "ts-node": "^7.0.1",
         "tslint": "^5.11.0",
         "typescript": "^3.1.1"

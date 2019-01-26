@@ -1,0 +1,13 @@
+{
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+
+    "git.alwaysShowStagedChangesResourceGroup": true,
+
+    "tslint.autoFixOnSave": true,
+}
