@@ -13,7 +13,7 @@ class App {
 
         router.get("/", (req, res) => {
             res.json({
-                message: "Welcome!"
+                message: "Welcome!",
             });
         });
 

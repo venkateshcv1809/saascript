@@ -22,7 +22,8 @@
         "SaaS",
         "Node",
         "TypeScript",
-        "Docker"
+        "Docker",
+        "VSCode"
     ],
     "author": "VENKATESH C.V",
     "license": "MIT",
@@ -34,12 +35,11 @@
         "body-parser": "^1.18.3",
         "compression": "^1.7.3",
         "express": "^4.16.3",
-        "lodash": "^4.17.13"
+        "lodash": "^4.17.11"
     },
     "devDependencies": {
         "@types/compression": "0.0.36",
         "@types/express": "^4.16.0",
-        "eslint": "^5.9.0",
         "ts-node": "^7.0.1",
         "tslint": "^5.11.0",
         "typescript": "^3.1.1"
