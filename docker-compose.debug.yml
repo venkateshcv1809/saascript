@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+    saascript:
+        environment:
+            - DEBUG=1
+        command: npm run debug
+        ports:
+            - "9229:9229"

@@ -15,5 +15,35 @@
                 "isDefault": true,
             },
         },
+        {
+            "label": "TypeScript Watch",
+            "type": "npm",
+            "script": "watch",
+            "isBackground": true,
+            "group": "build",
+            "problemMatcher": [
+                "$tsc-watch"
+            ],
+            "presentation": {
+                "reveal": "silent",
+            },
+        },
+        {
+            "label": "Docker Build Image",
+            "type": "shell",
+            "command": "docker build -t saascript .",
+            "group": "build",
+            "presentation": {
+                "reveal": "silent",
+            },
+        },
+        {
+            "label": "Docker Stop Container",
+            "type": "shell",
+            "command": "docker-compose stop",
+            "presentation": {
+                "reveal": "never",
+            },
+        }
     ],
 }

@@ -23,5 +23,48 @@
                 "${workspaceFolder}/src/server.ts"
             ]
         },
-    ]
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Docker: Launch Program",
+            "preLaunchTask": "TypeScript Watch",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run",
+                "debug-docker"
+            ],
+            "port": 9229,
+            "restart": true,
+            "sourceMaps": true,
+            "timeout": 60000,
+            "localRoot": "${workspaceFolder}/dist",
+            "remoteRoot": "/usr/src/saascript/dist",
+            "outFiles": [
+                "${workspaceFolder}/dist/**/*.js"
+            ],
+            "skipFiles": [
+                "<node_internals>/**/*.js",
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Docker: Attach to Node",
+            "preLaunchTask": "TypeScript Watch",
+            "protocol": "auto",
+            "port": 9229,
+            "restart": true,
+            "sourceMaps": true,
+            "localRoot": "${workspaceFolder}/dist",
+            "remoteRoot": "/usr/src/saascript/dist",
+            "outFiles": [
+                "${workspaceFolder}/dist/**/*.js"
+            ],
+            "skipFiles": [
+                "<node_internals>/**/*.js",
+            ],
+        },
+    ],
 }
