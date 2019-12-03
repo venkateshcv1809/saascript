@@ -2,12 +2,14 @@
     "name": "saascript",
     "version": "0.0.5",
     "description": "Node boilerplate for SaaS applications using TypeScript and Docker",
-    "main": "dist/server.js",
+    "main": "./dist/server.js",
     "scripts": {
-        "start": "node dist/server",
+        "start": "node ./dist/server",
         "serve": "npm run build && npm start",
+        "serve-docker": "npm run build-docker && docker-compose up",
         "serve-ts": "npm run tslint && ts-node src/server",
         "build": "npm run build-ts && npm run tslint",
+        "build-docker": "docker build -t saascript .",
         "build-ts": "tsc -p ./",
         "watch": "tsc -w -p ./",
         "tslint": "tslint -c tslint.json -p tsconfig.json"

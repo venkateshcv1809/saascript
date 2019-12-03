@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+    saascript:
+        build: .
+        image: saascript
+        command: npm run start
+        volumes:
+            - ./dist:/usr/src/saascript/dist
+        ports:
+            - "8080:8080"
