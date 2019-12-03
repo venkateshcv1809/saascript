@@ -12,8 +12,8 @@
             ],
             "group": {
                 "kind": "build",
-                "isDefault": true,
-            },
+                "isDefault": true
+            }
         },
         {
             "label": "TypeScript Watch",
@@ -25,8 +25,8 @@
                 "$tsc-watch"
             ],
             "presentation": {
-                "reveal": "silent",
-            },
+                "reveal": "silent"
+            }
         },
         {
             "label": "Docker Build Image",
@@ -34,16 +34,17 @@
             "command": "docker build -t saascript .",
             "group": "build",
             "presentation": {
-                "reveal": "silent",
-            },
+                "reveal": "silent"
+            }
         },
         {
             "label": "Docker Stop Container",
             "type": "shell",
             "command": "docker-compose stop",
             "presentation": {
-                "reveal": "never",
+                "reveal": "never"
             },
+            "problemMatcher": []
         }
     ],
 }
