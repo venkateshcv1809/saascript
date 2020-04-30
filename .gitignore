@@ -45,3 +45,7 @@ typings/
 
 # Ignore built ts files
 dist/
+*.tsbuildinfo
+
+#Environment files
+*.env
