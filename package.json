@@ -6,14 +6,14 @@
     "scripts": {
         "start": "node ./dist/server",
         "serve": "npm run build && npm start",
-        "serve-docker": "docker-compose up",
+        "serve-docker": "docker-compose up --build",
         "build": "npm run lint && npm run build-ts",
         "build-docker": "docker build -t saascript .",
         "build-ts": "tsc -b -f ./",
         "watch": "tsc -w -p ./",
         "debug": "npm run build && nodemon --watch ./dist --inspect=0.0.0.0:9229 --nolazy ./dist/server",
-        "debug-docker": "docker-compose -f docker-compose.yml -f docker-compose.debug.yml up",
-        "lint": "eslint ./src/**/*",
+        "debug-docker": "docker-compose -f docker-compose.yml -f docker-compose.debug.yml up --build",
+        "lint": "eslint './src/**/*' --fix",
         "test": "jest"
     },
     "repository": {
@@ -36,7 +36,9 @@
     "dependencies": {
         "compression": "^1.7.4",
         "express": "^4.17.1",
+        "express-graphql": "^0.9.0",
         "express-winston": "^4.0.3",
+        "graphql": "^15.0.0",
         "lodash": "^4.17.15",
         "mongoose": "^5.9.11",
         "winston": "^3.2.1"

@@ -1,13 +1,14 @@
 import express from 'express'
+import router from './routes/routes'
 
 class App {
-    public express: express.Express;
-
     constructor () {
         this.express = express()
         this.attachMiddleWares()
         this.mountRoutes()
     }
+
+    public express: express.Express
 
     private attachMiddleWares (): void {
         this.express.use(express.json())
@@ -15,14 +16,6 @@ class App {
     }
 
     private mountRoutes (): void {
-        const router = express.Router()
-
-        router.get('/', (req, res) => {
-            res.json({
-                message: 'Welcome!'
-            })
-        })
-
         this.express.use('/', router)
     }
 }
