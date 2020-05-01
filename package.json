@@ -7,14 +7,13 @@
         "start": "node ./dist/server",
         "serve": "npm run build && npm start",
         "serve-docker": "docker-compose up --build",
-        "serve-ts": "npm run tslint && ts-node src/server",
-        "build": "npm run build-ts && npm run tslint",
+        "build": "npm run lint && npm run build-ts",
         "build-docker": "docker build -t saascript .",
         "build-ts": "tsc -b -f ./",
         "watch": "tsc -w -p ./",
         "debug": "npm run build && nodemon --watch ./dist --inspect=0.0.0.0:9229 --nolazy ./dist/server",
         "debug-docker": "docker-compose -f docker-compose.yml -f docker-compose.debug.yml up --build",
-        "tslint": "tslint -c tslint.json -p tsconfig.json",
+        "lint": "eslint ./src/**/*",
         "test": "jest"
     },
     "repository": {
@@ -46,9 +45,16 @@
         "@types/compression": "^1.7.0",
         "@types/express": "^4.17.6",
         "@types/mongoose": "^5.7.14",
+        "@typescript-eslint/eslint-plugin": "^2.30.0",
+        "@typescript-eslint/parser": "^2.30.0",
+        "eslint": "^6.8.0",
+        "eslint-config-standard": "^14.1.1",
+        "eslint-plugin-import": "^2.20.2",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^4.2.1",
+        "eslint-plugin-standard": "^4.0.1",
         "jest": "^25.5.0",
         "nodemon": "^2.0.3",
-        "tslint": "^6.1.2",
         "typescript": "^3.8.3"
     }
 }

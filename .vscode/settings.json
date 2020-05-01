@@ -5,5 +5,4 @@
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
     "git.alwaysShowStagedChangesResourceGroup": true,
-    "tslint.autoFixOnSave": true,
 }
