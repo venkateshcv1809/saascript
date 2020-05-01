@@ -5,5 +5,8 @@ services:
         environment:
             - DEBUG=1
         command: npm run debug
+        volumes:
+            - ./dist:/usr/app/saascript/dist
+
         ports:
             - "9229:9229"

@@ -7,25 +7,6 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Node: Launch Program",
-            "preLaunchTask": "TypeScript Build",
-            "program": "${workspaceFolder}/dist/server",
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "TypeScript: Launch Program",
-            "runtimeArgs": [
-                "-r",
-                "ts-node/register"
-            ],
-            "args": [
-                "${workspaceFolder}/src/server.ts"
-            ]
-        },
-        {
-            "type": "node",
-            "request": "launch",
             "name": "Docker: Launch Program",
             "preLaunchTask": "TypeScript Watch",
             "runtimeExecutable": "npm",
@@ -38,7 +19,7 @@
             "sourceMaps": true,
             "timeout": 60000,
             "localRoot": "${workspaceFolder}/dist",
-            "remoteRoot": "/usr/src/saascript/dist",
+            "remoteRoot": "/usr/app/saascript/dist",
             "outFiles": [
                 "${workspaceFolder}/dist/**/*.js"
             ],
@@ -58,7 +39,7 @@
             "restart": true,
             "sourceMaps": true,
             "localRoot": "${workspaceFolder}/dist",
-            "remoteRoot": "/usr/src/saascript/dist",
+            "remoteRoot": "/usr/app/saascript/dist",
             "outFiles": [
                 "${workspaceFolder}/dist/**/*.js"
             ],

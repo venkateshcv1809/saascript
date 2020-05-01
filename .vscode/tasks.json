@@ -26,7 +26,11 @@
             ],
             "presentation": {
                 "reveal": "silent"
-            }
+            },
+            "dependsOn":[
+                "TypeScript Build"
+            ],
+            "dependsOrder": "sequence"
         },
         {
             "label": "Docker Build Image",

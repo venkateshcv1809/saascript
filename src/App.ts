@@ -5,7 +5,13 @@ class App {
 
     constructor() {
         this.express = express();
+        this.attachMiddleWares();
         this.mountRoutes();
+    }
+
+    private attachMiddleWares(): void {
+        this.express.use(express.json());
+        this.express.use(express.urlencoded({ extended: true }));
     }
 
     private mountRoutes(): void {

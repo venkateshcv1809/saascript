@@ -1,15 +1,16 @@
-FROM node:10.15.0
+FROM node:12.16.3
 
 # Create app directory
-WORKDIR /usr/src/saascript
+WORKDIR /usr/app/saascript
 
 # Install app dependencies
-COPY package*.json /usr/src/saascript/
+COPY package*.json /usr/app/saascript/
 RUN npm install
 
-# Bundle app source
-COPY . /usr/src/saascript/
+# Build app source
+COPY . /usr/app/saascript/
 RUN npm run build
 
 EXPOSE 8080
+
 CMD ["npm", "start"]

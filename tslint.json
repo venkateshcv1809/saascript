@@ -62,5 +62,10 @@
         "prefer-const": true,
         "jsdoc-format": true
     },
-    "rulesDirectory": []
+    "rulesDirectory": [],
+    "linterOptions": {
+        "exclude": [
+            "node_modules/**"
+        ]
+    }
 }
