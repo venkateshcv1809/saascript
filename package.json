@@ -6,13 +6,13 @@
     "scripts": {
         "start": "node ./dist/server",
         "serve": "npm run build && npm start",
-        "serve-docker": "docker-compose up --build",
+        "serve-docker": "docker-compose up",
         "build": "npm run lint && npm run build-ts",
         "build-docker": "docker build -t saascript .",
         "build-ts": "tsc -b -f ./",
         "watch": "tsc -w -p ./",
         "debug": "npm run build && nodemon --watch ./dist --inspect=0.0.0.0:9229 --nolazy ./dist/server",
-        "debug-docker": "docker-compose -f docker-compose.yml -f docker-compose.debug.yml up --build",
+        "debug-docker": "docker-compose -f docker-compose.yml -f docker-compose.debug.yml up",
         "lint": "eslint ./src/**/*",
         "test": "jest"
     },
