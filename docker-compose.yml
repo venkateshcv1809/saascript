@@ -1,6 +1,14 @@
 version: "3"
 
 services:
+    saascript-mongo:
+        container_name: saascript_mongo
+        image: mongo
+        ports:
+            - 27017:27017
+        volumes:
+            - ~/saascript-mongo:/data/db
+
     saascript:
         container_name: saascript
         build: .
@@ -9,11 +17,3 @@ services:
             - 8080:8080
         depends_on:
             - saascript-mongo
-
-    saascript-mongo:
-        container_name: saascript_mongo
-        image: mongo
-        ports:
-            - 27017:27017
-        volumes:
-            - ~/saascript-mongo:/data/db
