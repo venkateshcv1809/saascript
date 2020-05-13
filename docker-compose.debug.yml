@@ -7,6 +7,7 @@ services:
         command: npm run debug
         volumes:
             - ./dist:/usr/app/saascript/dist
+            - ./logs:/usr/app/saascript/logs
 
         ports:
             - "9229:9229"

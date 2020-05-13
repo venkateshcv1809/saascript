@@ -1,23 +1,27 @@
 import express from 'express'
+import compression from 'compression'
+import { reqLogger, errorLogger } from './common/logger'
 import router from './routes/routes'
 
 class App {
-    constructor () {
-        this.express = express()
+    public app: express.Application
+    constructor() {
+        this.app = express()
         this.attachMiddleWares()
         this.mountRoutes()
     }
 
-    public express: express.Express
-
-    private attachMiddleWares (): void {
-        this.express.use(express.json())
-        this.express.use(express.urlencoded({ extended: true }))
+    private attachMiddleWares(): void {
+        this.app.use(express.json())
+        this.app.use(express.urlencoded({ extended: true }))
+        this.app.use(compression())
     }
 
-    private mountRoutes (): void {
-        this.express.use('/', router)
+    private mountRoutes(): void {
+        this.app.use(reqLogger)
+        this.app.use('/', router)
+        this.app.use(errorLogger)
     }
 }
 
-export default new App().express
+export const app = (new App().app)
