@@ -1,5 +1,5 @@
 import logger from './common/logger'
-import { app } from './App'
+import app from './App'
 
 const port = process.env.PORT || 8080
 

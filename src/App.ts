@@ -1,14 +1,14 @@
 import express from 'express'
 import compression from 'compression'
-import { mongo } from './db/DB'
+import mongo from './db/DB'
 import { reqLogger, errorLogger } from './common/logger'
-import router from './routes/routes'
+import routes from './routes/routes'
 
 class App {
     public app: express.Application
     constructor() {
         this.app = express()
-        mongo.init()
+        mongo.connect()
         this.attachMiddleWares()
     }
 
@@ -19,10 +19,10 @@ class App {
         this.app.use(reqLogger)
 
         // Attach App routes
-        this.app.use('/', router)
+        this.app.use('/', routes)
 
         this.app.use(errorLogger)
     }
 }
 
-export const app = (new App().app)
+export default (new App().app)

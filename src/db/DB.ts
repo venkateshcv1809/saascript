@@ -3,28 +3,35 @@ import logger from '../common/logger'
 
 const MONGO_URL = 'mongodb://saascript-mongo:27017/saascript'
 
-interface DB {
-    db: mongoose.Connection & {
-        then: Promise<mongoose.Connection>['then'];
-        catch: Promise<mongoose.Connection>['catch'];
-    }
-}
+export class DB {
+    private mongoUri: string
+    public db: mongoose.Connection
 
-class DB {
-    public init() {
-        if (!this.db) {
-            this.db = mongoose.createConnection(MONGO_URL, {
+    constructor(uri: string) {
+        this.mongoUri = uri
+        this.db = mongoose.createConnection()
+    }
+
+    public async connect() {
+        try {
+            await this.db.openUri(this.mongoUri, {
                 useNewUrlParser: true,
                 useUnifiedTopology: true
             })
+            logger.info(`Connected to mongoDB URL - ${this.mongoUri}`)
+        } catch (mongoError) {
+            logger.error(`Error connecting to mongoDB URL - ${this.mongoUri}`, mongoError)
+        }
+    }
 
-            this.db.then(() => {
-                logger.info(`Connected to mongoDB URL - ${MONGO_URL}`)
-            }).catch((mongoError) => {
-                logger.error(`Error connecting to mongoDB URL - ${MONGO_URL}`, mongoError)
-            })
+    public async disconnect() {
+        try {
+            await this.db.close()
+            logger.info(`Disconnected from mongoDB URL - ${this.mongoUri}`)
+        } catch (mongoError) {
+            logger.error(`Error disconnecting from mongoDB URL - ${this.mongoUri}`, mongoError)
         }
     }
 }
 
-export const mongo = new DB()
+export default new DB(MONGO_URL)
