@@ -1,28 +1,20 @@
 {
-  "name": "saascript-frontend",
+  "name": "frontend",
   "version": "1.0.0",
-  "description": "Frontend application for the SaaScript project, built with React and TypeScript.",
-  "main": "src/index.tsx",
+  "private": true,
   "scripts": {
-    "start": "webpack serve --mode development",
-    "build": "webpack --mode production",
-    "test": "jest"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "typescript": "^4.4.4"
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
   },
   "devDependencies": {
-    "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.2",
-    "webpack": "^5.51.1",
-    "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^3.11.2",
-    "jest": "^27.0.6",
-    "ts-loader": "^9.2.6"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT"
+    "typescript": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest"
+  }
 }
