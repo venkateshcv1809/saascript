@@ -6,6 +6,7 @@ import { migrate } from './utils/migrate';
 import { UserCreateSchema } from './types/user';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import crypto from 'crypto';
 
 // Load environment variables from .env file
 dotenv.config();
@@ -141,11 +142,79 @@ app.post('/admin/assign-role', authenticateToken, authorizeRoles(['admin']), asy
     }
     // Add role if not present
     if (!user.roles.includes(role)) {
-      await db.none('UPDATE users SET roles = array_append(roles, $1) WHERE username = $2', [role, username]);
+      await db.none('UPDATE users SET roles = array_append(roles, $1) WHERE username = $2', [
+        role,
+        username,
+      ]);
     }
     res.json({ success: true, message: `Role '${role}' assigned to user '${username}'` });
   } catch (err) {
     logger.error('Assign role error', err);
+    res.status(500).json({ success: false, error: 'Internal server error' });
+  }
+});
+
+// Password reset request endpoint
+app.post('/reset-password-request', async (req, res) => {
+  const { email } = req.body;
+  if (!email) {
+    return res.status(400).json({ success: false, error: 'Email is required' });
+  }
+  try {
+    const user = await db.oneOrNone('SELECT id FROM users WHERE email = $1', [email]);
+    // Always respond generically for security
+    if (!user) {
+      return res.json({
+        success: true,
+        message: 'If the email exists, a reset link will be sent.',
+      });
+    }
+    const token = crypto.randomBytes(32).toString('hex');
+    const expiresAt = new Date(Date.now() + 1000 * 60 * 30); // 30 minutes
+    await db.none(
+      'INSERT INTO password_reset_tokens (user_id, token, expires_at) VALUES ($1, $2, $3)',
+      [user.id, token, expiresAt],
+    );
+    // Simulate sending email (log to console)
+    logger.info(`Password reset token for user ${user.id}: ${token}`);
+    return res.json({ success: true, message: 'If the email exists, a reset link will be sent.' });
+  } catch (err) {
+    logger.error('Reset password request error', err);
+    res.status(500).json({ success: false, error: 'Internal server error' });
+  }
+});
+
+// Password reset endpoint
+app.post('/reset-password', async (req, res) => {
+  const { token, username, password } = req.body;
+  if (!token || !username || !password) {
+    return res
+      .status(400)
+      .json({ success: false, error: 'token, username, and new password are required' });
+  }
+  try {
+    const user = await db.oneOrNone('SELECT id FROM users WHERE username = $1', [username]);
+    if (!user) {
+      return res.status(400).json({ success: false, error: 'Invalid token or user' });
+    }
+    const reset = await db.oneOrNone(
+      'SELECT * FROM password_reset_tokens WHERE user_id = $1 AND token = $2 AND used = FALSE AND expires_at > NOW()',
+      [user.id, token],
+    );
+    if (!reset) {
+      return res.status(400).json({ success: false, error: 'Invalid or expired token' });
+    }
+    const hashed_password = await bcrypt.hash(password, 10);
+    await db.tx(async (t) => {
+      await t.none('UPDATE users SET hashed_password = $1 WHERE id = $2', [
+        hashed_password,
+        user.id,
+      ]);
+      await t.none('UPDATE password_reset_tokens SET used = TRUE WHERE id = $1', [reset.id]);
+    });
+    res.json({ success: true, message: 'Password has been reset.' });
+  } catch (err) {
+    logger.error('Reset password error', err);
     res.status(500).json({ success: false, error: 'Internal server error' });
   }
 });
