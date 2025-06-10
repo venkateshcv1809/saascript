@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy package.json from the local module directory
 COPY package.json ./
 
+# Copy shared-dist (built output) into the build context
+COPY shared-dist ./shared-dist
+
 # Install all dependencies (both regular and dev dependencies)
 RUN yarn install --frozen-lockfile --production=false
 
