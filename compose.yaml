@@ -31,5 +31,28 @@ services:
     depends_on:
       - auth-db
 
+  auth:
+    image: node:18
+    working_dir: /usr/src/app
+    volumes:
+      - ./modules/auth:/usr/src/app
+    command: yarn dev
+    environment:
+      - DATABASE_URL=postgres://user:password@db:5432/authdb
+      - JWT_SECRET=your_jwt_secret
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: authdb
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+
 volumes:
   auth-db-data:
