@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  auth-db:
+    image: postgres:16
+    container_name: auth-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: authdb
+      POSTGRES_USER: authuser
+      POSTGRES_PASSWORD: authpass
+    ports:
+      - "5432:5432"
+    volumes:
+      - auth-db-data:/var/lib/postgresql/data
+
+  auth-service:
+    build:
+      context: ./modules/auth
+    container_name: auth-service
+    restart: unless-stopped
+    environment:
+      PORT: 3000
+      DB_HOST: auth-db
+      DB_PORT: 5432
+      DB_NAME: authdb
+      DB_USER: authuser
+      DB_PASSWORD: authpass
+    ports:
+      - "3000:3000"
+    depends_on:
+      - auth-db
+
+volumes:
+  auth-db-data:
