@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import logger from './utils/logger';
 
 // Load environment variables from .env file
 dotenv.config();
@@ -14,5 +15,5 @@ app.get('/health', (_req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`Auth service listening on port ${PORT}`);
+  logger.info(`Auth service listening on port ${PORT}`);
 });
