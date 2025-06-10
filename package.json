@@ -4,7 +4,8 @@
   "private": true,
   "workspaces": [
     "modules/*",
-    "frontend"
+    "frontend",
+    "shared"
   ],
   "scripts": {
     "build": "lerna run build",
