@@ -8,11 +8,8 @@ SaaScript is a TypeScript-focused monorepo designed to facilitate the developmen
 
 - **modules/**: Contains individual SaaS modules, each with its own source code, configuration, and dependencies.
   - **module1/**: An example module with its own entry point and configuration.
-  
 - **frontend/**: The frontend application built with React, containing components, entry points, and configuration files.
-  
 - **scripts/**: Contains utility scripts for deployment and other tasks.
-  
 - **shared/**: Holds shared types and interfaces that can be used across different modules and the frontend.
 
 ## High-Level Architecture
@@ -22,9 +19,7 @@ The project is structured around a microservices architecture, where each module
 ### Key Components
 
 - **TypeScript Modules**: Each module is developed in TypeScript, ensuring type safety and better maintainability.
-  
 - **React Frontend**: The frontend is built using React, allowing for a dynamic and responsive user interface.
-  
 - **Deployment Scripts**: Scripts are provided to streamline the deployment process, making it easier to manage the application lifecycle.
 
 ## Getting Started
