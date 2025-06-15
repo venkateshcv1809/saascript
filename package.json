@@ -1,20 +1,27 @@
 {
   "name": "saascript",
   "version": "1.0.0",
+  "description": "Monorepo for SaaScript - A SaaS blueprint using TypeScript/Node.js",
   "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/venkateshcv1809/saascript.git"
+  },
+  "keywords": ["saas", "typescript", "nodejs", "nestjs", "react", "nextjs", "microservices", "monorepo"],
+  "author": {
+    "name": "Venkatesh CV",
+    "url": "https://github.com/venkateshcv1809"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/venkateshcv1809/saascript/issues"
+  },
+  "homepage": "https://github.com/venkateshcv1809/saascript#readme",
   "workspaces": [
     "modules/*",
-    "frontend",
-    "shared"
-  ],
-  "scripts": {
-    "build": "lerna run build",
-    "test": "lerna run test",
-    "lint": "lerna run lint",
-    "deploy": "bash scripts/deploy.sh"
-  },
-  "devDependencies": {
-    "lerna": "^4.0.0"
-  },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+    "frontend/*"
+  ]
 }
