@@ -12,14 +12,14 @@ Our vision is to offer a comprehensive, end-to-end SaaS framework that enables d
 
 ### Core Principles
 
-* AI-Assisted Development: Leveraging AI tools and processes to maximize efficiency across the entire software development lifecycle.
-* Automation First: Automate repetitive and complex tasks with "single-command" scripts.
-* Convention Over Configuration: Embrace structured frameworks (NestJS, React with Next.js) to enforce consistency and maintainability.
-* Modular & Reusable: Designed with independent microservices and components for high reusability.
-* API-First: Clear, consistent, and well-documented APIs for all services.
-* Scalable & Resilient: Architected to handle high loads and ensure high availability.
-* Security-First: Built with robust security practices at every layer.
-* TypeScript-First: Prioritizing TypeScript for robust, scalable, and maintainable codebase.
+* **AI-Assisted Development:** Leveraging AI tools and processes to maximize efficiency across the entire software development lifecycle.
+* **Automation First:** Automate repetitive and complex tasks with "single-command" scripts.
+* **Convention Over Configuration:** Embrace structured frameworks (NestJS, React with Next.js) to enforce consistency and maintainability.
+* **Modular & Reusable:** Designed with independent microservices and components for high reusability.
+* **API-First:** Clear, consistent, and well-documented APIs for all services.
+* **Scalable & Resilient:** Architected to handle high loads and ensure high availability.
+* **Security-First:** Built with robust security practices at every layer.
+* **TypeScript-First:** Prioritizing TypeScript for robust, scalable, and maintainable codebase.
 
 ---
 
@@ -46,13 +46,26 @@ This monorepo is organized into the following top-level directories:
 
 ---
 
+### Documentation
+
+The `docs/` directory contains comprehensive guides and architectural overviews for the SaaScript project:
+
+* **[AI-Assisted Workflow](./docs/ai-assisted-workflow.md):** Explains the collaboration model between human and AI co-developer.
+* **[Architecture Overview](./docs/architecture.md):** Details the finalized technology stack, core principles, and module design.
+* **[Local Development Guide](./docs/local-development.md):** Step-by-step instructions for setting up and running the project locally.
+* **[Development Workflow](./docs/development-workflow.md):** Outlines Git strategy, Pull Request (PR) process, and Conventional Commits.
+* **[Project Management Approach](./docs/project-management.md):** Describes the agile-inspired project management philosophy and tools.
+* **[Code Style Guidelines](./docs/code-style-guidelines.md):** Defines coding standards for consistency and maintainability.
+
+---
+
 ### Getting Started (Local Development)
 
-Refer to the [`docs/LOCAL_DEVELOPMENT.md`](./docs/LOCAL_DEVELOPMENT.md) guide for detailed instructions on setting up and running the project locally.
+Refer to the [`docs/local-development.md`](./docs/local-development.md) guide for detailed instructions on setting up and running the project locally.
 
 ### Development Workflow
 
-Our development workflow follows an AI-assisted agile methodology with a simplified Gitflow strategy and Conventional Commits. See [`docs/DEVELOPMENT_WORKFLOW.md`](./docs/DEVELOPMENT_WORKFLOW.md) for details.
+Our development workflow follows an AI-assisted agile methodology with a simplified Gitflow strategy and Conventional Commits. See [`docs/development-workflow.md`](./docs/development-workflow.md) for details.
 
 ### Contributing
 
