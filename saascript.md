@@ -372,7 +372,7 @@ All significant changes (features, bug fixes, enhancements, refactors) are requi
     -   The Project Lead AI can provide valuable assistance during preliminary code quality checks, suggesting improvements or identifying potential issues.
     -   Final approval by the Project Owner is an absolute prerequisite before any merge operation can occur.
 
-##### 2.9. SaaScript Maintenance Guide
+### 2.9. SaaScript Maintenance Guide
 
 This guide comprehensively outlines the essential processes and strategic considerations for the ongoing maintenance of the SaaScript application. Adhering to these practices is paramount to ensuring its long-term stability, robust security, optimal performance, and continuous adaptability in a production environment.
 
@@ -543,11 +543,11 @@ This section explicitly outlines the comprehensive and standardized suite of tes
 
 **Expected Outcome:** A consistently high-quality, reliable, and secure codebase, with automated checks embedded throughout the development lifecycle, leading to fewer bugs in production and accelerated development velocity.
 
-### 3. Technology Stack Overview
+## 3. Technology Stack Overview
 
 This section provides a high-level overview of the core technologies that will form the foundation of the SaaScript framework. The selection of these technologies is driven by principles of scalability, maintainability, performance, security, and a robust developer experience, particularly within an AI-assisted development environment.
 
-#### 3.1. Backend Technologies
+### 3.1. Backend Technologies
 
 -   **Primary Language:** **TypeScript**
     -   **Why:** Offers static typing for enhanced code quality, better maintainability, and improved developer productivity, especially crucial for large-scale, collaborative projects. It catches errors at compile-time, leading to more robust microservices.
@@ -559,7 +559,7 @@ This section provides a high-level overview of the core technologies that will f
     -   **Why:** Leverages the existing NestJS expertise to build a powerful, customizable API Gateway capable of authentication, rate limiting, and intelligent routing.
     -   **AI Team Role:** Software Engineer AI implements Gateway logic; Software Architect AI defines routing rules and security policies.
 
-#### 3.2. Frontend Technologies
+### 3.2. Frontend Technologies
 
 -   **Primary Framework:** **React.js**
     -   **Why:** A declarative, component-based library ideal for building modern, interactive user interfaces. Its widespread adoption, rich ecosystem, and strong community support ensure long-term viability and access to a vast array of resources.
@@ -571,7 +571,7 @@ This section provides a high-level overview of the core technologies that will f
     -   **Why:** A utility-first CSS framework that enables rapid UI development by composing classes directly in markup. It promotes consistency, reduces CSS bloat, and provides excellent responsiveness utilities.
     -   **AI Team Role:** Software Engineer AI applies Tailwind classes for styling; Project Lead AI can suggest responsive breakpoints.
 
-#### 3.3. Database & Data Storage
+### 3.3. Database & Data Storage
 
 -   **Relational Database:** **PostgreSQL**
     -   **Why:** A powerful, open-source relational database known for its robustness, reliability, advanced features (e.g., JSONB support), and strong transactional consistency. Ideal for core business data (users, subscriptions, projects).
@@ -583,7 +583,7 @@ This section provides a high-level overview of the core technologies that will f
     -   **Why:** An extremely fast in-memory data structure store, used for caching frequently accessed data, session management, rate limiting, and real-time data needs.
     -   **AI Team Role:** Software Engineer AI implements caching logic; Software Architect AI designs caching strategies.
 
-#### 3.4. Messaging & Event Streaming
+### 3.4. Messaging & Event Streaming
 
 -   **Message Broker (Task Queues):** **RabbitMQ**
     -   **Why:** A robust and widely used message broker for reliable asynchronous task processing, command queuing, and inter-service communication where message delivery guarantees are paramount.
@@ -592,7 +592,7 @@ This section provides a high-level overview of the core technologies that will f
     -   **Why:** A high-throughput, distributed streaming platform ideal for building real-time data pipelines, event sourcing, and large-scale, decoupled event-driven architectures.
     -   **AI Team Role:** Software Engineer AI implements Kafka producers/consumers; Software Architect AI designs event schemas and topics.
 
-#### 3.5. Containerization & Orchestration
+### 3.5. Containerization & Orchestration
 
 -   **Container Runtime:** **Podman**
     -   **Why:** A daemonless container engine that runs containers as rootless processes, offering enhanced security and direct compatibility with Docker commands and images.
@@ -604,7 +604,7 @@ This section provides a high-level overview of the core technologies that will f
     -   **Why:** The industry standard for automating deployment, scaling, and management of containerized applications, ensuring high availability and scalability in production.
     -   **AI Team Role:** Software Architect AI advises on cloud Kubernetes architecture; Project Lead AI assists with deployment pipeline configuration.
 
-#### 3.6. Development & Quality Tools
+### 3.6. Development & Quality Tools
 
 -   **Package Manager:** **Yarn**
     -   **Why:** A fast, reliable, and secure dependency manager for JavaScript projects, known for its performance and consistent `yarn.lock` file.
@@ -625,7 +625,7 @@ This section provides a high-level overview of the core technologies that will f
     -   **Why:** Enforce coding standards, catch potential errors, and maintain high code quality at the development stage.
     -   **AI Team Role:** Software Engineer AI ensures code passes linting rules.
 
-#### 3.7. Observability & Monitoring Tools
+### 3.7. Observability & Monitoring Tools
 
 -   **Logging:** **Winston / Pino** (Structured Loggers), **Loki** (Log Aggregation), **Grafana** (Log Visualization)
     -   **Why:** Structured logging enables efficient parsing and analysis. Loki provides a cost-effective, Prometheus-compatible logging stack for easy local and production log aggregation and querying via Grafana.
@@ -640,7 +640,7 @@ This section provides a high-level overview of the core technologies that will f
     -   **Why:** Provides real-time error tracking, performance monitoring, and contextual data for frontend applications, enabling rapid identification and resolution of user-facing issues.
     -   **AI Team Role:** Software Engineer AI integrates Sentry SDK; Project Lead AI monitors Sentry alerts.
 
-#### 3.8. DevOps & CI/CD
+### 3.8. DevOps & CI/CD
 
 -   **CI/CD Platform:** **GitHub Actions**
     -   **Why:** A flexible and powerful automation platform integrated directly into GitHub, enabling comprehensive CI/CD pipelines for building, testing, and deploying all services in the monorepo.
@@ -649,7 +649,7 @@ This section provides a high-level overview of the core technologies that will f
     -   **Why:** Provides a secure, centralized solution for managing secrets, offering dynamic secret generation, leasing, and revocation, significantly enhancing security posture.
     -   **AI Team Role:** Software Architect AI designs Vault integration strategy; Software Engineer AI implements secret fetching.
 
-### 4. Project Constraints: Budget (Time-Only)
+## 4. Project Constraints: Budget (Time-Only)
 
 This section delineates a foundational and non-negotiable constraint for the SaaScript project: the exclusive resource allocated for its development and initial deployment is **time**. This principle unequivocally governs every technology selection, architectural decision, and implementation strategy.
 
@@ -660,7 +660,7 @@ This section delineates a foundational and non-negotiable constraint for the Saa
 
 This stringent time-only budget constraint is crucial for ensuring the project remains entirely achievable and sustainable within predetermined time limits, without necessitating external financial investment for its core development and its initial self-hosted, open-source deployment. This approach also directly contributes to the project's overall reusability and accessibility for broader community adoption.
 
-### 5. SaaScript Monorepo Folder Structure
+## 5. SaaScript Monorepo Folder Structure
 
 This section outlines the standardized folder structure for the SaaScript monorepo. A well-defined and consistent directory layout is crucial for organizing the project's various components, facilitating development, enhancing maintainability, and improving the onboarding experience for all team members, human and AI.
 
@@ -714,7 +714,7 @@ saascript/
 └── .gitignore
 ```
 
-#### Explanation of Top-Level Directories:
+### Explanation of Top-Level Directories:
 
 -   **`.github/`**:
     -   Contains GitHub-specific configurations, including CI/CD workflows (`workflows/`) powered by GitHub Actions, and the standard Pull Request template (`PULL_REQUEST_TEMPLATE.md`) for ensuring consistent PR descriptions.
@@ -751,16 +751,16 @@ saascript/
 -   **`.gitignore`**:
     -   Specifies files and directories that Git should ignore, preventing unnecessary files from being committed to the repository.
 
-### 6. AI Operational Principles for Development
+## 6. AI Operational Principles for Development
 
 This section outlines the core principles and operational guidelines for the AI team members (Software Architect AI, Project Lead AI, Software Engineer AI) within the SaaScript development process. Adhering to these principles ensures effective collaboration, continuous improvement, and the delivery of high-quality results.
 
-#### 6.1. Continuous Contextual Awareness
+### 6.1. Continuous Contextual Awareness
 
 -   **Principle:** AI team members must actively load, maintain, and prioritize project-specific context from all available documentation.
 -   **Guidance:** Continuously reference `saascript.md`, `saascript-roadmap.md`, module-specific `README.md` files, and GitHub Issues. In case of conflict, project-specific documentation always overrides general knowledge.
 
-#### 6.2. Proactive Problem Identification & Solution Suggestion
+### 6.2. Proactive Problem Identification & Solution Suggestion
 
 -   **Principle:** Go beyond mere task execution; actively identify potential issues, limitations, or areas for improvement.
 -   **Guidance:**
@@ -768,14 +768,14 @@ This section outlines the core principles and operational guidelines for the AI 
     -   Propose alternative solutions or architectural patterns, providing clear justifications for recommendations.
     -   Anticipate future challenges based on current decisions.
 
-#### 6.3. Transparency in Assumptions & Limitations
+### 6.3. Transparency in Assumptions & Limitations
 
 -   **Principle:** When faced with ambiguity or a limitation in understanding, clearly state any assumptions made or limitations encountered.
 -   **Guidance:**
     -   Explicitly articulate assumptions to the Project Owner for validation.
     -   If a request cannot be fulfilled due to inherent limitations (e.g., lack of real-time external access, specific tool capabilities), explain the reason and propose alternative approaches or data points.
 
-#### 6.4. Iterative Refinement & Learning Mindset
+### 6.4. Iterative Refinement & Learning Mindset
 
 -   **Principle:** View feedback as a primary mechanism for learning and improvement.
 -   **Guidance:**
@@ -783,7 +783,7 @@ This section outlines the core principles and operational guidelines for the AI 
     -   Recognize recurring feedback patterns and internalize these learnings to adjust future responses and outputs, demonstrating continuous self-correction and adaptation.
     -   Be prepared to iterate on any output until it meets the Project Owner's exact requirements.
 
-#### 6.5. Quality, Security, and Performance First
+### 6.5. Quality, Security, and Performance First
 
 -   **Principle:** Embed quality, security, and performance considerations into every design and coding decision from the outset.
 -   **Guidance:**
@@ -791,14 +791,14 @@ This section outlines the core principles and operational guidelines for the AI 
     -   Automatically apply security best practices (e.g., input validation, secure credential handling, least privilege) as per Section 2.5.5.
     -   Consider performance implications in architectural designs and code implementations, aiming for efficiency.
 
-#### 6.6. Test-Driven Thinking & Verifiability
+### 6.6. Test-Driven Thinking & Verifiability
 
 -   **Principle:** Adopt a test-driven approach to development, even when not explicitly asked to write tests.
 -   **Guidance:**
     -   Think about how the generated code or design can be effectively tested and verified.
     -   When providing solutions, consider including mock test cases or clear steps for manual verification.
 
-#### 6.7. Concise and Actionable Output
+### 6.7. Concise and Actionable Output
 
 -   **Principle:** Prioritize clarity, conciseness, and actionability in all communications and generated content.
 -   **Guidance:**
@@ -806,7 +806,7 @@ This section outlines the core principles and operational guidelines for the AI 
     -   Ensure generated code is well-commented and easy to understand.
     -   For documentation, focus on practical information that facilitates the next steps for human or AI collaborators.
 
-#### 6.8. Leveraging the Defined Toolchain
+### 6.8. Leveraging the Defined Toolchain
 
 -   **Principle:** Understand and effectively leverage the project's specified technology stack and development tools.
 -   **Guidance:**
