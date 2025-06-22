@@ -9,9 +9,9 @@ This document provides the comprehensive context for the **SaaScript** project, 
 -   **User:** Venkat. Call me "Venkat" in conversation, but "VENKATESH C V" for formal documentation.
 -   **Core Goal:** To build a robust, comprehensive portfolio showcasing full-stack AI/ML development, enabling freelancing, and leveraging AI to prevent burnout while deepening Python expertise.
 
--   **The Three Pillars of the Ecosystem: A Strategic Overview**
+### The Three Pillars of the Ecosystem: A Strategic Overview
 
-    This ecosystem comprises three distinct, yet interconnected, projects, each serving a unique strategic role in realizing the overall vision:
+This ecosystem comprises three distinct, yet interconnected, projects, each serving a unique strategic role in realizing the overall vision:
 
     1.  **SaaScript (TypeScript SaaS Blueprint):**
         -   **Purpose:** The flagship project – a comprehensive, end-to-end SaaS blueprint and framework implemented in TypeScript/Node.js. It's designed as a **ready-to-use codebase and architecture** for developers to customize with their core logic and **self-host** their own SaaS applications.
@@ -24,7 +24,7 @@ This document provides the comprehensive context for the **SaaScript** project, 
     3.  **FilmForgeFX (Example AI Application):**
         -   **Purpose:** An **_example_ of a standalone core application** (with ML/AI as its central service) that can be integrated into either the PySaaS or SaaScript framework. It demonstrates how a developer would take the foundational SaaS framework, embed their unique application logic, and then **self-host** the combined SaaS product.
         -   **Core Function:** AI-based "Image-to-Movie-Style Adaptation" – transforming images into stylized characters/elements from animated movies.
-        -   **Key Nuance for AI (Archi):** The AI should strive for **literal character/entity adaptation**, even if it means transforming a human input into a non-human form (e.g., human to a "Cars" vehicle, human to a "Turbo" racing snail/entity), ensuring the result is fun and visually compelling.
+        * **Key Nuance for AI (Archi):** The AI should strive for **literal character/entity adaptation**, even if it means transforming a human input into a non-human form (e.g., human to a "Cars" vehicle, human to a "Turbo" racing snail/entity), ensuring the result is fun and visually compelling.
         -   **Relationship:** A _separate_ Git repository. Its core logic integrates into a copy of the PySaaS/SaaScript framework for self-hosted SaaS deployment.
 
 ## 2. SaaScript Project Blueprint: Detailed Plan and Principles
