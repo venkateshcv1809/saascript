@@ -186,19 +186,19 @@ This plan outlines the complete project lifecycle, broken down into manageable p
 
 #### Summary of Phases:
 
--   **[Phase 0: Project Setup & Initial Monorepo Foundation](saascript-roadmap.md#phase-0-project-setup-initial-monorepo-foundation)**
--   **[Phase 1: Core Infrastructure & Initial Services](saascript-roadmap.md#phase-1-core-infrastructure-initial-services)**
--   **[Phase 2: Core Feature Development & Database Integration](saascript-roadmap.md#phase-2-core-feature-development-database-integration)**
--   **[Phase 3: User Management, Authentication & Authorization Expansion](saascript-roadmap.md#phase-3-user-management-authentication-authorization-expansion)**
--   **[Phase 4: Billing, Subscriptions & Payment Gateway Integration](saascript-roadmap.md#phase-4-billing-subscriptions-payment-gateway-integration)**
--   **[Phase 5: Dashboard, Analytics & Reporting](saascript-roadmap.md#phase-5-dashboard-analytics-reporting)**
--   **[Phase 6: Integrations & Extensibility](saascript-roadmap.md#phase-6-integrations-extensibility)**
--   **[Phase 7: Performance Optimization & Scalability](saascript-roadmap.md#phase-7-performance-optimization-scalability)**
--   **[Phase 8: Messaging & Asynchronous Processing (RabbitMQ & Apache Kafka)](saascript-roadmap.md#phase-8-messaging-asynchronous-processing-rabbitmq-apache-kafka)**
--   **[Phase 9: Local Kubernetes Deployment (Minikube)](saascript-roadmap.md#phase-9-local-kubernetes-deployment-minikube)**
--   **[Phase 10: Security Hardening & Compliance](saascript-roadmap.md#phase-10-security-hardening-compliance)**
--   **[Phase 11: Deployment, Monitoring & Production Readiness](saascript-roadmap.md#phase-11-deployment-monitoring-production-readiness)**
--   **[Phase 12: Future Enhancements & Strategic Growth](saascript-roadmap.md#phase-12-future-enhancements-strategic-growth)**
+-   **[Phase 0: Project Setup & Initial Monorepo Foundation](saascript-roadmap.md#phase-0)**
+-   **[Phase 1: Core Infrastructure & Initial Services](saascript-roadmap.md#phase-1)**
+-   **[Phase 2: Core Feature Development & Database Integration](saascript-roadmap.md#phase-2)**
+-   **[Phase 3: User Management, Authentication & Authorization Expansion](saascript-roadmap.md#phase-3)**
+-   **[Phase 4: Billing, Subscriptions & Payment Gateway Integration](saascript-roadmap.md#phase-4)**
+-   **[Phase 5: Dashboard, Analytics & Reporting](saascript-roadmap.md#phase-5)**
+-   **[Phase 6: Integrations & Extensibility](saascript-roadmap.md#phase-6)**
+-   **[Phase 7: Performance Optimization & Scalability](saascript-roadmap.md#phase-7)**
+-   **[Phase 8: Messaging & Asynchronous Processing (RabbitMQ & Apache Kafka)](saascript-roadmap.md#phase-8)**
+-   **[Phase 9: Local Kubernetes Deployment (Minikube)](saascript-roadmap.md#phase-9)**
+-   **[Phase 10: Security Hardening & Compliance](saascript-roadmap.md#phase-10)**
+-   **[Phase 11: Deployment, Monitoring & Production Readiness](saascript-roadmap.md#phase-11)**
+-   **[Phase 12: Future Enhancements & Strategic Growth](saascript-roadmap.md#phase-12)**
 
 ### 2.7. SaaScript Project Management Guide: Collaborative Development with AI
 
@@ -607,7 +607,7 @@ This section provides a high-level overview of the core technologies that will f
 ### 3.6. Development & Quality Tools
 
 -   **Package Manager:** **Yarn**
-    -   **Why:** A fast, reliable, and secure dependency manager for JavaScript projects, known for its performance and consistent `yarn.lock` file.
+    -   **Why:** A fast, reliable, and secure dependency manager for JavaScript projects, known for its performance and consistent `yarn.lock` file. While `npm` is included by default with Node.js and will be provided as the primary command in documentation examples, **Yarn is the recommended choice** for optimal monorepo performance and consistent dependency resolution via Yarn Workspaces.
     -   **AI Team Role:** All AI team members will use `yarn` commands; Software Engineer AI manages `package.json` and `yarn.lock`.
 -   **Testing Framework:** **Jest**
     -   **Why:** A delightful JavaScript testing framework for all parts of the codebase (frontend and backend), known for its simplicity, speed, and powerful assertion capabilities.
@@ -662,94 +662,165 @@ This stringent time-only budget constraint is crucial for ensuring the project r
 
 ## 5. SaaScript Monorepo Folder Structure
 
-This section outlines the standardized folder structure for the SaaScript monorepo. A well-defined and consistent directory layout is crucial for organizing the project's various components, facilitating development, enhancing maintainability, and improving the onboarding experience for all team members, human and AI.
+This section outlines the standardized and detailed folder structure for the SaaScript monorepo. A well-defined and consistent directory layout is crucial for organizing the project's various components, facilitating development, enhancing maintainability, and improving the onboarding experience for all team members, human and AI.
 
 ```markdown
 saascript/
-├── .github/
-│   ├── workflows/
-│   └── PULL_REQUEST_TEMPLATE.md
-├── docs/
-│   ├── ARCHITECTURE.md
-│   ├── AI_Assisted_Workflow.md
-│   ├── LOCAL_DEVELOPMENT.md
-│   ├── DEVELOPMENT_WORKFLOW.md
-│   ├── PROJECT_MANAGEMENT.md
-│   └── saascript-roadmap.md
-├── frontend/
-│   ├── web/
-│   └── admin/
-├── infra/
-│   ├── docker-compose/
-│   │   ├── base/
-│   │   ├── dev/
-│   │   └── prod/
-│   ├── kubernetes/
-│   │   ├── deployments/
-│   │   ├── services/
-│   │   ├── configmaps/
-│   │   └── secrets/
-│   └── vault/
-├── modules/
-│   ├── gateway/
-│   ├── auth_service/
-│   ├── projects_service/
-│   ├── billing_service/
-│   ├── profile_service/
-│   ├── analytics_service/
-│   ├── notifications_service/
-│   ├── audit_log_service/
-│   ├── feature_flags_service/
-│   ├── webhooks_service/
-│   └── libs/
-│       ├── database/
-│       │   ├── postgres/
-│       │   └── dynamodb/
-│       └── messaging/
-│           ├── rabbitmq/
-│           └── kafka/
-├── scripts/
-├── package.json
-├── yarn.lock
-└── .gitignore
+├── .github/                  # GitHub specific configurations (CI/CD workflows, issue/PR templates)
+│   ├── ISSUE_TEMPLATE/       # Templates for standardizing bug reports and feature requests
+│   │   └── bug_report.md
+│   ├── PULL_REQUEST_TEMPLATE.md # Template for guiding Pull Request contributions
+│   └── workflows/            # Definitions for CI/CD pipelines
+│       └── ci.yml
+│
+├── .vscode/                  # Visual Studio Code workspace settings, tasks, launch configs, and recommended extensions for consistent dev environment
+│   ├── settings.json
+│   ├── tasks.json
+│   ├── launch.json
+│   └── extensions.json
+│
+├── docs/                     # Project-level documentation (architecture, workflows, guidelines)
+│   ├── architecture.md
+│   ├── ai-assisted-workflow.md
+│   ├── local-development.md
+│   ├── development-workflow.md
+│   ├── project-management.md
+│   └── code-style-guidelines.md
+│
+├── e2e/                      # End-to-End (E2E) test suites for full system validation (e.g., Cypress/Playwright configuration and test files)
+│   └── ...
+│
+├── infra/                    # Infrastructure-as-Code (IaC) for deployment and local environment setup
+│   ├── docker-compose.yml    # Defines multi-container Docker applications for local development (databases, message brokers, etc.)
+│   ├── kubernetes/           # Kubernetes manifests for production deployment
+│   │   ├── deployments/      # Kubernetes Deployment definitions for each service
+│   │   ├── services/         # Kubernetes Service definitions for network access
+│   │   ├── configmaps/       # Kubernetes ConfigMaps for non-sensitive configuration data
+│   │   └── secrets/          # Kubernetes Secrets for sensitive data management
+│   └── vault/                # Configurations and policies related to HashiCorp Vault for secret management
+│
+├── modules/                  # Individual microservices and shared libraries
+│   ├── gateway/              # Central API Gateway, entry point for all client requests
+│   │   └── ...
+│   │
+│   ├── auth_service/         # Handles user authentication, authorization, and identity management
+│   │   └── ...
+│   │
+│   ├── projects_service/     # Manages project creation, user access, and project-specific data
+│   │   └── ...
+│   │
+│   ├── billing_service/      # Manages subscription plans, payments, and invoicing
+│   │   └── ...
+│   │
+│   ├── profile_service/      # Manages user profiles and preferences
+│   │   └── ...
+│   │
+│   ├── notifications_service/ # Handles sending various notifications (email, SMS, in-app)
+│   │   └── ...
+│   │
+│   ├── audit_log_service/    # Centralizes and stores immutable audit trails of critical user activities and system events
+│   │   └── ...
+│   │
+│   ├── feature_flags_service/ # Provides dynamic control over application features and behaviors without code deployments
+│   │   └── ...
+│   │
+│   ├── webhooks_service/     # Manages external webhook subscriptions and dispatches outgoing event notifications to third-party systems
+│   │   └── ...
+│   │
+│   ├── analytics_service/    # Collects, processes, and stores application telemetry and user behavioral data for reporting and insights
+│   │   └── ...
+│   │
+│   └── libs/                 # Shared libraries and reusable modules for all microservices
+│       ├── database/         # Database connectivity and ORM modules
+│       │   ├── postgres/     # PostgreSQL specific module and configurations
+│       │   │   ├── src/postgres.module.ts
+│       │   │   └── package.json
+│       │   ├── dynamodb/     # DynamoDB specific module and configurations
+│       │   │   ├── src/dynamodb.module.ts
+│       │   │   └── package.json
+│       │   └── package.json  # Root package.json for database libs
+│       ├── cache/            # Caching clients and related utilities
+│       │   ├── redis/        # Redis client module and configurations
+│       │   │   ├── src/redis.module.ts
+│       │   │   └── package.json
+│       │   └── package.json  # Root package.json for cache libs
+│       ├── messaging/        # Messaging clients for inter-service communication
+│       │   ├── kafka/        # Apache Kafka client module
+│       │   │   ├── src/kafka.module.ts
+│       │   │   └── package.json
+│       │   ├── rabbitmq/     # RabbitMQ client module
+│       │   │   ├── src/rabbitmq.module.ts
+│       │   │   └── package.json
+│       │   └── package.json  # Root package.json for messaging libs
+│       └── common/           # General-purpose utilities, decorators, and shared types
+│           ├── src/
+│           │   ├── errors/   # Custom error classes and error handling utilities
+│           │   ├── logging/  # Centralized logging utilities
+│           │   ├── validators/ # Common data validation utilities
+│           │   └── index.ts  # Export file for common utilities
+│           └── package.json  # Package.json for common utilities
+│       └── package.json      # Root package.json for all shared libs
+│
+├── frontend/                 # Frontend applications (web, admin dashboards)
+│   ├── web/                  # Primary web application (Next.js/React)
+│   │   └── ...
+│   │
+│   ├── admin/                # Admin dashboard application (Next.js/React)
+│   │   └── ...
+│   │
+│   └── package.json          # Root package.json for frontend applications
+│
+├── scripts/                  # Utility scripts for development, build, and deployment tasks
+│   └── ...
+│
+├── package.json              # Monorepo root package.json for workspace management and shared dev dependencies
+└── .gitignore                # Git ignored files and directories
 ```
 
 ### Explanation of Top-Level Directories:
 
 -   **`.github/`**:
     -   Contains GitHub-specific configurations, including CI/CD workflows (`workflows/`) powered by GitHub Actions, and the standard Pull Request template (`PULL_REQUEST_TEMPLATE.md`) for ensuring consistent PR descriptions.
+-   **`.vscode/`**:
+    -   Visual Studio Code workspace settings, tasks, launch configurations, and recommended extensions for a consistent development environment across all contributors.
 -   **`docs/`**:
-    -   Houses all high-level project documentation. This includes architectural blueprints (`ARCHITECTURE.md`), guides for AI-assisted workflow, local development setup, overall development workflow, project management guidelines, and the detailed project roadmap (`saascript-roadmap.md`).
--   **`frontend/`**:
-    -   This directory serves as the root for all user-facing client applications.
-    -   **`web/`**: The primary customer-facing web application (Next.js/React).
-    -   **`admin/`**: The dedicated administrative dashboard application (Next.js/React) for SaaScript management.
+    -   Houses all high-level project documentation. This includes architectural blueprints (`architecture.md`), guides for AI-assisted workflow (`ai-assisted-workflow.md`), local development setup (`local-development.md`), overall development workflow (`development-workflow.md`), project management guidelines (`project-management.md`), and the detailed project roadmap (`saascript-roadmap.md`). All filenames within `docs/` adhere to `kebab-case` for consistency.
+-   **`e2e/`**:
+    -   Dedicated directory for End-to-End (E2E) test suites, providing full system validation by simulating real user interactions across the integrated application.
 -   **`infra/`**:
     -   Stores all infrastructure-as-code definitions and configurations.
-    -   **`docker-compose/`**: Contains `docker-compose` (or `podman-compose`) files structured for different environments (e.g., `base/` for shared services, `dev/` for development-specific overrides, `prod/` for production-like configurations). This helps in managing local development environments.
-    -   **`kubernetes/`**: Holds all Kubernetes YAML manifests organized by resource type (e.g., `deployments/`, `services/`, `configmaps/`, `secrets/`) for streamlined deployment to K8s clusters (Minikube or production).
-    -   **`vault/`**: Contains configurations and scripts related to the local HashiCorp Vault setup.
+    -   **`docker-compose.yml`**: Defines PostgreSQL, Redis, RabbitMQ, Kafka servers, etc. for local development environments.
+    -   **`kubernetes/`**: Holds all Kubernetes YAML manifests organized by resource type (`deployments/`, `services/`, `configmaps/`, `secrets/`) for streamlined deployment to K8s clusters (Minikube or production).
+    -   **`vault/`**: Contains configurations and scripts related to the local HashiCorp Vault setup for secrets management.
 -   **`modules/`**:
     -   This is the core directory for all backend microservices, organized by their domain or responsibility.
     -   **`gateway/`**: The NestJS-based API Gateway service.
     -   **`auth_service/`**: Handles user authentication and authorization.
     -   **`projects_service/`**: Manages project-related data and logic.
-    -   **`billing_service/`**: Manages subscription plans, payments, and invoices.
+    -   **`billing_service/`**: Manages subscription plans, payments, and invoicing.
     -   **`profile_service/`**: Manages user profiles and preferences.
-    -   **`analytics_service/`**: Processes and provides analytics data.
     -   **`notifications_service/`**: Handles asynchronous user notifications.
-    -   **`audit_log_service/`**: Stores and manages audit trails of system events.
-    -   **`feature_flags_service/`**: Manages dynamic feature flags.
-    -   **`webhooks_service/`**: Manages and dispatches outgoing webhooks.
-    -   **`libs/`**: Contains shared libraries and common modules reused across multiple microservices, preventing code duplication. This includes database connection modules (`database/`) and messaging client configurations (`messaging/`).
+    -   **`audit_log_service/`**: Centralizes and stores immutable audit trails of critical user activities and system events.
+    -   **`feature_flags_service/`**: Provides dynamic control over application features and behaviors without code deployments.
+    -   **`webhooks_service/`**: Manages external webhook subscriptions and dispatches outgoing event notifications to third-party systems.
+    -   **`analytics_service/`**: Collects, processes, and stores application telemetry and user behavioral data for reporting and insights.
+    -   **`libs/`**: **Shared Libraries/Modules for SaaScript Backend Microservices.** This refined structure includes:
+        -   **`database/`**: Database-related shared modules like `postgres/` (for TypeORM, migrations) and `dynamodb/` (for AWS SDK client config).
+        -   **`cache/`**: Caching-related shared modules, specifically `redis/` (for Redis client, caching decorators).
+        -   **`messaging/`**: Messaging-related shared modules like `kafka/` (for Kafka client setup) and `rabbitmq/` (for AMQP client, message queue decorators).
+        -   **`common/`**: Truly generic utilities including standardized error handling, centralized logging, and custom validators. Each library within `libs/` can have its own `package.json` for independent dependency management.
+-   **`frontend/`**:
+    -   This directory serves as the root for all user-facing client applications.
+    -   **`web/`**: The main customer-facing web application (Next.js/React).
+    -   **`admin/`**: The dedicated administrative dashboard application (Next.js/React) for SaaScript management.
+    -   Includes a `package.json` for workspace definitions if the frontend apps are managed as a workspace.
 -   **`scripts/`**:
     -   Holds shell scripts (`.sh` or `.js` scripts) for more complex automation tasks that go beyond simple `package.json` commands (e.g., custom setup scripts, specialized build/deploy helpers, data seeding).
 -   **`package.json`**:
-    -   The root `package.json` file for the monorepo, defining project-wide scripts, dependencies, and configuring Yarn workspaces to manage individual module dependencies.
--   **`yarn.lock`**:
-    -   Generated by Yarn, this file ensures consistent dependency installations across all environments and for all team members.
+    -   The repository root `package.json` file, defining project-wide scripts, dependencies, and configuring Yarn workspaces for the entire monorepo.
 -   **`.gitignore`**:
     -   Specifies files and directories that Git should ignore, preventing unnecessary files from being committed to the repository.
+
 
 ## 6. AI Operational Principles for Development
 
