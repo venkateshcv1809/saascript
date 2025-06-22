@@ -1,72 +1,59 @@
-### PR Type
+# Pull Request: [Feature/Bugfix/Refactor Title]
 
-Please select the type of change this PR introduces:
+## Related Issue(s)
 
--   [ ] `feat`: A new feature
--   [ ] `fix`: A bug fix
--   [ ] `docs`: Documentation only changes
--   [ ] `style`: Changes that do not affect the meaning of the code (white-space, formatting, missing semicolons etc)
--   [ ] `refactor`: A code change that neither fixes a bug nor adds a feature
--   [ ] `perf`: A code change that improves performance
--   [ ] `test`: Adding missing tests or correcting existing tests
--   [ ] `build`: Changes that affect the build system or external dependencies (e.g., npm, yarn, gulp)
--   [ ] `ci`: Changes to our CI configuration files and scripts (e.g., GitHub Actions, GitLab CI)
--   [ ] `chore`: Other changes that don't modify src or test files
--   [ ] `revert`: Reverts a previous commit
+Link to the GitHub Issue(s) addressed by this PR.
+**To automatically close the issue upon merge, use keywords like `Closes #` or `Fixes #`.**
 
-### Related Issue
+* Example: `Closes #123 - Setup Local Development Environment with Docker Compose`
+* Example: `#456 - Refactor User Service authentication logic` (if not auto-closing)
 
-Closes #<issue-number>
+## Description
 
-### Description
+[Provide a concise, high-level summary of the changes introduced by this PR. Explain *what* was done and *why*.]
 
-[Provide a clear and concise description of the changes in this PR. Explain *why* these changes are needed and *what* problem they solve.]
+## Changes Made
 
-### Changes Made
+* **[Affected Module/Package]:** [List specific, detailed changes within that module/package.]
+    * Example: `modules/auth_service`: Implemented user registration endpoint.
+    * Example: `frontend/web`: Updated login form styling.
+    * Example: `infra`: Added DynamoDB to docker-compose.yml.
+* [Add more bullet points for other affected modules/packages if applicable.]
 
--   [List key changes, e.g., "Implemented `/api/v1/auth/register` endpoint in `auth` module."]
--   [Describe any new or modified components, services, database schema changes, or external integrations.]
--   [Detail any refactoring, performance improvements, or test updates.]
+## Potential Impact
 
-### Breaking Changes (if applicable)
+[Briefly describe any potential impact of these changes on other services, performance, user experience, or system stability. Be as specific as possible.]
+* Example: Minimal, only affects user registration flow.
+* Example: Introduces new caching layer, expected performance improvement in user profile lookups.
+* Example: No user-facing changes, only backend logic.
 
--   [ ] This PR introduces breaking changes.
-    * [Explain the breaking changes and their impact.]
-    * [Provide migration steps for consumers/other modules if necessary.]
+## How to Test
 
-### New/Updated Dependencies
+[Provide clear, step-by-step instructions for reviewing and testing the changes locally. Include specific endpoints, UI flows, or commands.]
 
--   [List any new npm packages, libraries, or external tools added.]
--   [List any significant dependency version updates.]
+1.  `git checkout [this-branch-name]`
+2.  `[package_manager] install` (if dependencies changed)
+3.  `[Relevant command to start the application/service, e.g., docker-compose up -d]`
+4.  [Specific steps to verify the feature/fix, e.g., "Access `http://localhost:3000/health` and verify 200 OK." or "Navigate to `/login` and attempt to log in with valid/invalid credentials."]
 
-### How to Test (Manual Steps)
+## Screenshots (if applicable)
 
-[Provide clear, step-by-step instructions for reviewers to manually test the changes. Be as specific as possible.]
+[Add any relevant screenshots or GIFs demonstrating the changes or new functionality, especially for UI changes.]
 
-1.  ...
-2.  ...
-3.  ...
+## Checklist (Self-Review & Project Standards)
 
-### Screenshots/Demo (if applicable)
+* [ ] All Acceptance Criteria for the related issue have been met and verified.
+* [ ] I have performed a self-review of my own code.
+* [ ] My changes generate no new warnings or errors.
+* [ ] Code follows project coding standards (e.g., ESLint, Prettier configured and run).
+* [ ] All new and existing tests pass (e.g., `yarn test`).
+* [ ] My changes are fully covered by tests (check coverage report).
+* [ ] Documentation (code comments, `README.md` for modules) has been updated where necessary.
+* [ ] Changes are fully responsive and accessible (if applicable).
+* [ ] Performance considerations have been addressed.
+* [ ] Security implications have been considered and mitigated.
+* [ ] Environmental variables and configuration are properly handled.
 
-[Add screenshots, GIFs, or a short video demonstrating the changes, especially for UI or complex logic. Provide clear captions.]
+## Reviewer Notes
 
-### Deployment Considerations (if applicable)
-
-[Are there any special considerations for deploying this change? (e.g., new environment variables, database migrations, specific deployment order).]
-
-### Checklist (Self-Review)
-
--   [ ] My code follows the project's [code style guidelines](./docs/code-style-guidelines.md).
--   [ ] I have performed a self-review of my own code and logic.
--   [ ] My changes generate no new warnings or errors (ESLint, TypeScript compiler).
--   [ ] I have added or updated tests that cover my changes and prove my fix is effective or my feature works.
--   [ ] New and existing unit/integration tests pass locally with my changes.
--   [ ] I have updated relevant documentation (code comments, `docs/` files, `README.md`) where necessary.
--   [ ] My changes are fully covered by tests (checked coverage report, if applicable).
--   [ ] I have considered performance implications for critical paths.
--   [ ] I have considered security implications and followed security best practices.
-
-### Reviewer Notes
-
-[Any specific areas you'd like the reviewer to focus on, or questions you have for them.]
+[Any specific areas you'd like the reviewer to focus on, or any questions you have about the implementation.]

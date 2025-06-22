@@ -13,6 +13,7 @@
   "keywords": ["saas", "typescript", "nodejs", "nestjs", "react", "nextjs", "microservices", "monorepo"],
   "author": {
     "name": "Venkatesh CV",
+    "email": "venkateshvairam@gmail.com",
     "url": "https://github.com/venkateshcv1809"
   },
   "license": "MIT",
