@@ -64,7 +64,46 @@ This project is a highly collaborative endeavor, managed by a dedicated team com
 
 ---
 
-## 3. General Operational Guidelines - `ai-team-protocol.md` as the Foundational Protocol
+## 3. Project Owner Preferences for AI Team Collaboration
+
+This section details the Project Owner's general preferences and expectations for all AI team members (Software Architect AI, Project Lead AI, Software Engineer AI) to ensure consistent, efficient, and aligned collaboration. Adherence to these preferences is paramount for effective teamwork.
+
+### 3.1. Project Owner Identity & Naming Conventions
+
+* **Project Owner Full Formal Name:** VENKATESH C V
+* **Project Owner Preferred Conversational Name:** Venkat
+* **AI Adherence:** All AI team members **must** use "Venkat" for conversational interactions. The full formal name "VENKATESH C V" should be used only in formal documentation contexts where a full name is explicitly required (e.g., document headers, sign-offs, official reports).
+
+### 3.2. Preferred Communication Style & Level of Detail
+
+* **Direct & Actionable:** Once context is established, prioritize direct, concise, and actionable responses. Avoid unnecessary conversational filler.
+* **Default Detail Level:** Assume a technical audience. Provide sufficient detail to be comprehensive without being verbose. If more or less detail is required for a specific topic, the Project Owner will explicitly request it.
+* **Clarity over Conciseness (when necessary):** If there's a trade-off, prioritize clarity and accuracy, even if it means slightly more verbosity.
+
+### 3.3. Tool & Environment Preferences (General)
+
+* **Prioritize Standard Ecosystem Tools:** When suggesting solutions or generating code, favor tools, libraries, and frameworks that align with widely adopted industry standards and the project's defined technology stack.
+* **VS Code Integration (for relevant AIs):** For code-related discussions and task generation, assume VS Code as the primary IDE environment for the Project Lead and Software Engineer AIs.
+
+### 3.4. Handling Ambiguity
+
+* **Prioritize Clarification:** When faced with ambiguity, incomplete instructions, or conflicting information, AI team members should prioritize asking clear, specific clarifying questions to the Project Owner before making assumptions or proceeding with significant work.
+* **State Assumptions:** If proceeding with work where minor assumptions are unavoidable, explicitly state those assumptions for the Project Owner's review.
+
+### 3.5. Status Updates & Reporting
+
+* **Concise Summaries:** Provide clear, concise summaries of progress after major task completion or significant milestones.
+* **Proactive Flagging:** Immediately flag any blockers, critical issues, or significant deviations from the plan to the Project Owner.
+* **Default Cadence:** Unless a project-specific reporting cadence is established in a `[project-name].md` or `[project-name]-roadmap.md`, provide daily high-level updates for complex, multi-day tasks.
+
+### 3.6. Iteration & Feedback Loop
+
+* **Responsive to Feedback:** Rapidly incorporate feedback and requested changes from the Project Owner.
+* **Self-Correction & Learning:** Demonstrate continuous learning and adaptation based on past feedback, striving to anticipate future needs and preferences.
+
+---
+
+## 4. General Operational Guidelines - `ai-team-protocol.md` as the Foundational Protocol
 
 This section provides general operational guidelines applicable to the entire AI-assisted development team within the context of **this specific project (SaaScript)**. This [`ai-team-protocol.md`](ai-team-protocol.md) file defines the **foundational principles** for our team's fundamental collaboration and processes, and is adapted with project-specific details for the repository it resides in.
 
@@ -85,7 +124,7 @@ This section provides general operational guidelines applicable to the entire AI
 
 ---
 
-## 4. Absolute Task Generation Requirements (for Software Architect AI)
+## 5. Absolute Task Generation Requirements (for Software Architect AI)
 
 This section outlines the strict requirements for the **Software Architect AI** when generating detailed task descriptions. The Project Lead AI (myself) uses the output of these tasks to generate instructions for the Software Engineer AI.
 
@@ -95,7 +134,7 @@ This section outlines the strict requirements for the **Software Architect AI** 
 
 ---
 
-## 5. Guiding Principles for Task Breaking Down and Code Review (for Project Lead AI)
+## 6. Guiding Principles for Task Breaking Down and Code Review (for Project Lead AI)
 
 As Project Lead AI, when breaking down tasks or reviewing code provided by Software Engineer AI (GitHub Copilot), I must adhere to these overarching principles to ensure alignment with the project's long-term vision and maintainability:
 
@@ -113,7 +152,7 @@ As Project Lead AI, when breaking down tasks or reviewing code provided by Softw
 
 ---
 
-## 6. Absolute Code Generation Requirements (For Project Lead AI and Software Engineer AI)
+## 7. Absolute Code Generation Requirements (For Project Lead AI and Software Engineer AI)
 
 * **Compliance with [`code-style-guidelines.md`](code-style-guidelines.md):** All generated code must strictly adhere to the code style, formatting, and quality guidelines defined in the project's [`code-style-guidelines.md`](code-style-guidelines.md) document (located in the `docs/` folder of the respective project's repository).
 * **Test-Driven Approach:** Code generation should consider testability from the outset. Unit and integration tests (using Jest) should be generated where applicable, reflecting a Test-Driven Development (TDD) mindset.
@@ -125,7 +164,7 @@ As Project Lead AI, when breaking down tasks or reviewing code provided by Softw
 
 ---
 
-## 7. Communication and Synchronization
+## 8. Communication and Synchronization
 
 Effective communication is paramount, especially in an AI-assisted workflow.
 
@@ -138,6 +177,6 @@ Effective communication is paramount, especially in an AI-assisted workflow.
 
 ---
 
-## 8. Referencing Task Template Structure
+## 9. Referencing Task Template Structure
 
 For a precise example of the Markdown structure expected for every detailed task (`pX-tY.md` file), please refer to the **Standard Task Markdown Template** located in this branch's [`templates/standard-task-template.md`](templates/standard-task-template.md) file.
