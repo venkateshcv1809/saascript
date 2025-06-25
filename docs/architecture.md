@@ -234,7 +234,7 @@ SaaScript leverages a robust and modern technology stack to meet its scalability
 * **Containerization:** **Docker/Podman** - For packaging applications and their dependencies into portable containers.
 * **Orchestration (Local):** **Minikube** - Runs a single-node Kubernetes cluster locally, simulating a production Kubernetes environment for development and testing.
 * **Secrets Management:** **HashiCorp Vault** - Provides centralized management and dynamic generation of secrets and sensitive data.
-* **End-to-End Testing Framework:** **[Cypress/Playwright - TBD]** - For full system validation.
+* **End-to-End Testing Framework:** **Playwright** - For full system validation.
 * **Package Manager:** **Yarn** - Strictly enforced for all Node.js package management.
 * **Development Environment:** **Visual Studio Code** - Recommended IDE with configurations managed in `.vscode/`.
 
