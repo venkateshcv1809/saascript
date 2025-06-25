@@ -160,27 +160,37 @@ This document provides an indexed list of all tasks for the **SaaScript** projec
 * **GitHub Issue:** [Issue #ISSUE_NUMBER](https://github.com/venkateshcv1809/saascript/issues/ISSUE_NUMBER)
 * **Status:** To Do
 
-### 14. **P2-T14:** [feat(saascript-modules-projects): Implement Project Management Microservice Skeleton](tasks/phase-2/p2-t14.md)
+### 14. **P2-T14:** [feat(saascript-frontend-web): Implement Client-Side Authorization with CASL](tasks/phase-2/p2-t14.md)
+* **Rationale:** Integrates CASL.js into the frontend to manage and enforce client-side authorization rules, ensuring UI elements are dynamically rendered based on user permissions and preventing rework in later stages.
+* **GitHub Issue:** [Issue #ISSUE_NUMBER](https://github.com/venkateshcv1809/saascript/issues/ISSUE_NUMBER)
+* **Status:** To Do
+
+### 15. **P2-T15:** [chore(saascript-libs-authz): Implement Shared Backend Authorization Module (NestJS)](tasks/phase-2/p2-t15.md)
+* **Rationale:** Establishes a consistent, reusable server-side authorization framework as a dedicated NestJS shared library (`modules/libs/authz/`) for all microservices, ensuring robust access control and centralizing permission management at the backend.
+* **GitHub Issue:** [Issue #ISSUE_NUMBER](https://github.com/venkateshcv1809/saascript/issues/ISSUE_NUMBER)
+* **Status:** To Do
+
+### 16. **P2-T16:** [feat(saascript-modules-projects): Implement Project Management Microservice Skeleton](tasks/phase-2/p2-t16.md)
 * **Rationale:** Initiates the development of the first core business logic microservice (e.g., Project Management).
 * **GitHub Issue:** [Issue #ISSUE_NUMBER](https://github.com/venkateshcv1809/saascript/issues/ISSUE_NUMBER)
 * **Status:** To Do
 
-### 15. **P2-T15:** [chore(saascript-modules-projects): Setup Testing Framework for Project Service](tasks/phase-2/p2-t15.md)
+### 17. **P2-T17:** [chore(saascript-modules-projects): Setup Testing Framework for Project Service](tasks/phase-2/p2-t17.md)
 * **Rationale:** Configures the testing environment for the Project Service.
 * **GitHub Issue:** [Issue #ISSUE_NUMBER](https://github.com/venkateshcv1809/saascript/issues/ISSUE_NUMBER)
 * **Status:** To Do
 
-### 16. **P2-T16:** [infra(saascript-modules-projects): Containerize SaaScript Project Service](tasks/phase-2/p2-t16.md)
+### 18. **P2-T18:** [infra(saascript-modules-projects): Containerize SaaScript Project Service](tasks/phase-2/p2-t18.md)
 * **Rationale:** Containers the Project Service for deployment within the Docker Compose environment.
 * **GitHub Issue:** [Issue #ISSUE_NUMBER](https://github.com/venkateshcv1809/saascript/issues/ISSUE_NUMBER)
 * **Status:** To Do
 
-### 17. **P2-T17:** [feat(saascript-modules-projects): Integrate PostgreSQL for Project Service Data](tasks/phase-2/p2-t17.md)
+### 19. **P2-T19:** [feat(saascript-modules-projects): Integrate PostgreSQL for Project Service Data](tasks/phase-2/p2-t19.md)
 * **Rationale:** Integrates the Project Service with PostgreSQL using the shared database module, defining its own entities.
 * **GitHub Issue:** [Issue #ISSUE_NUMBER](https://github.com/venkateshcv1809/saascript/issues/ISSUE_NUMBER)
 * **Status:** To Do
 
-### 18. **P2-T18:** [feat(saascript-modules-projects): Implement CRUD for Projects](tasks/phase-2/p2-t18.md)
+### 20. **P2-T20:** [feat(saascript-modules-projects): Implement CRUD for Projects](tasks/phase-2/p2-t20.md)
 * **Rationale:** Develops the core functionalities for creating, reading, updating, and deleting project entities.
 * **GitHub Issue:** [Issue #ISSUE_NUMBER](https://github.com/venkateshcv1809/saascript/issues/ISSUE_NUMBER)
 * **Status:** To Do
